@@ -190,26 +190,23 @@ h1{font-size:clamp(42px,6vw,78px);line-height:.93;margin:0 0 16px;letter-spacing
 </div>
 
 <script>
-  const script = document.createElement('script');
-  script.src = "https://tvglobocorp-my.sharepoint.com/personal/felipe_nicoletti_g_globo/Documents/Documentos/visitas.js?v=" + new Date().getTime();
-  document.head.appendChild(script);
-</script>
+  var s = document.createElement('script');
+  s.src = 'https://tvglobocorp-my.sharepoint.com/personal/felipe_nicoletti_g_globo/Documents/Documentos/visitas.js?v=' + Date.now();
 
-<script>
+  s.onload = function() {
+    // mapa de ocupação — só roda após o JS carregar
+    ocupacao = {};
+    visitas.forEach(v => {
+      if (!v.data_visita) return;
 
-// mapa de ocupação
-const ocupacao = {};
-visitas.forEach(v => {
-  if (!v.data_visita) return;
+      if (!ocupacao[v.data_visita]) {
+        ocupacao[v.data_visita] = [];
+      }
 
-  if (!ocupacao[v.data_visita]) {
-    ocupacao[v.data_visita] = [];
-  }
+      ocupacao[v.data_visita].push(v.hora_visita);
+    });
 
-  ocupacao[v.data_visita].push(v.hora_visita);
-});
-
-const d = document.getElementById('data');
+    const d = document.getElementById('data');
 const h = document.getElementById('hora');
 const q = document.getElementById('qtd');
 
@@ -409,6 +406,9 @@ form.addEventListener('submit', async e => {
     btn.textContent = 'Enviar inscrição';
   }
 });
+  };
+
+  document.head.appendChild(s);
 
 </script>
 
