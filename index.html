@@ -16,108 +16,54 @@
 h1{font-size:clamp(42px,6vw,78px);line-height:.93;margin:0 0 16px;letter-spacing:-.04em}.grad{background:linear-gradient(90deg,#1d4ed8 0%,#7c3aed 25%,#ec4899 50%,#f59e0b 75%,#10b981 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{font-size:18px;line-height:1.65;color:var(--muted);max-width:640px;margin-bottom:20px}.points{display:grid;gap:14px;margin:22px 0 0}.point{background:var(--card);border:1px solid rgba(17,24,39,.08);border-radius:20px;padding:16px 18px;box-shadow:0 18px 48px rgba(17,24,39,.06)}.point strong{display:block;font-size:18px;margin-bottom:3px}.point span{color:var(--muted)}
 .card{background:var(--card);border:1px solid rgba(17,24,39,.08);border-radius:26px;box-shadow:0 18px 60px rgba(17,24,39,.08);padding:24px}.card h2{margin:0 0 12px;font-size:22px}
-
-/* ── Mensagem de status ── */
 .notice{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;padding:12px 14px;border-radius:14px;font-size:14px}
 .error{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:12px 14px;border-radius:14px;font-size:14px}
-
-/* ── Bloco de sucesso igual ao print: fundo cinza, texto grande centralizado ── */
-.success-block{
-  display:none;
-  background:#effbef;
-  border-radius:18px;
-  padding:35px 22px 35px;
-  margin-bottom:20px;
-  text-align:center;
-}
-.success-block .success-title{
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 700;
-  margin-bottom: 14px;
-  line-height: 1.25;
-  color: #447916;
-}
-.success-block .success-body{
-  font-size: clamp(14px, 2vw, 24px);
-  line-height: 1.45;
-  color: #374151;
-  font-weight: 700;
-}
-.success-block.visible{display:block;}
-
-.form{display:grid;gap:14px;margin-top:14px}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;font-weight:700;font-size:13px;color:#374151;margin:0 0 6px}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:14px;padding:14px 14px;font:inherit;background:#fff;outline:none}input:focus,select:focus,textarea:focus{border-color:#93c5fd;box-shadow:0 0 0 4px rgba(59,130,246,.12)}
-.guest{border:1px dashed #cbd5e1;border-radius:18px;background:#fafafa;padding:16px}.guest-title{font-weight:800;margin-bottom:12px}.guest-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}.btn{appearance:none;border:none;border-radius:16px;padding:14px 18px;font-weight:900;font-size:16px;color:#fff;background:linear-gradient(90deg,#1d9bf0,#7c3aed,#f59e0b);cursor:pointer;box-shadow:0 12px 24px rgba(29,155,240,.22)}.btn:disabled{opacity:.55;cursor:not-allowed}.small{font-size:13px;color:var(--muted);margin-top:8px}
-.footer{margin-top:18px;padding-top:16px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.footer .sig{line-height:1.65;color:var(--muted);max-width:640px;}
+.success-block{display:none;background:#effbef;border-radius:18px;padding:35px 22px;margin-bottom:20px;text-align:center}
+.success-block .success-title{font-size:clamp(18px,2vw,24px);font-weight:700;margin-bottom:14px;line-height:1.25;color:#447916}
+.success-block .success-body{font-size:clamp(14px,2vw,24px);line-height:1.45;color:#374151;font-weight:700}
+.success-block.visible{display:block}
+.form{display:grid;gap:14px;margin-top:14px}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-weight:700;font-size:13px;color:#374151;margin:0 0 6px}
+input,select,textarea{width:100%;border:1px solid var(--line);border-radius:14px;padding:14px;font:inherit;background:#fff;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#93c5fd;box-shadow:0 0 0 4px rgba(59,130,246,.12)}
+.guest{border:1px dashed #cbd5e1;border-radius:18px;background:#fafafa;padding:16px}.guest-title{font-weight:800;margin-bottom:12px}.guest-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.btn{appearance:none;border:none;border-radius:16px;padding:14px 18px;font-weight:900;font-size:16px;color:#fff;background:linear-gradient(90deg,#1d9bf0,#7c3aed,#f59e0b);cursor:pointer;box-shadow:0 12px 24px rgba(29,155,240,.22)}.btn:disabled{opacity:.55;cursor:not-allowed}
+.small{font-size:13px;color:var(--muted);margin-top:8px}
+.footer{margin-top:18px;padding-top:16px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.footer .sig{line-height:1.65;color:var(--muted);max-width:640px}
 .badge{margin-top:16px;display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px}.badge img{width:34px;height:34px;border-radius:10px;object-fit:cover}
 .hidden{display:none!important}
-@media (max-width:900px){
+
+/* date picker */
+.date-wrapper{position:relative}
+.date-trigger{
+  width:100%;border:1px solid var(--line);border-radius:14px;padding:14px;
+  font:inherit;background:#fff;color:#9ca3af;cursor:pointer;
+  user-select:none;-webkit-user-select:none;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+  display:block;
+}
+.date-trigger.filled{color:var(--text)}
+
+.calendar{
+  background:#fff;border:1px solid #ddd;padding:10px;border-radius:10px;
+  position:absolute;top:calc(100% + 6px);left:0;
+  width:280px;max-width:calc(100vw - 36px);
+  z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.15);
+}
+.week-header{display:grid;grid-template-columns:repeat(7,1fr);margin-bottom:5px;font-weight:bold;text-align:center;font-size:11px;color:#6b7280}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.day{padding:7px 4px;text-align:center;border-radius:8px;cursor:pointer;font-size:13px;line-height:1;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.day.disabled{color:#ccc;cursor:not-allowed;pointer-events:none;opacity:.5}
+.day:not(.disabled):hover,.day:not(.disabled):active{background:#e0f2fe}
+
+@media(max-width:900px){
   .hero{grid-template-columns:1fr}
   .row,.guest-row,.footer{grid-template-columns:1fr}
-  /* no mobile o calendário ocupa a largura total do campo */
-  .calendar{width:100%;max-width:100%;left:0;right:0}
+  .calendar{width:100%;max-width:100%}
   .wrap{padding:14px 14px 24px}
   .card{padding:18px 14px}
 }
-
-
-/* ── date-wrapper precisa ser relative para o calendário se posicionar dentro ── */
-.date-wrapper {
-  position: relative;
-}
-
-.calendar {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 10px;
-  /* position absolute relativo ao .date-wrapper */
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  /* limita a largura ao viewport e garante que não saia da tela */
-  width: 280px;
-  max-width: min(280px, calc(100vw - 36px));
-  z-index: 100;
-  box-shadow: 0 8px 24px rgba(0,0,0,.12);
-}
-
-.week-header {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  margin-bottom: 5px;
-  font-weight: bold;
-  text-align: center;
-  font-size: 11px;
-  color: #6b7280;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 3px;
-}
-
-.day {
-  /* sem width fixo — ocupa a coluna do grid */
-  padding: 7px 4px;
-  text-align: center;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 13px;
-  line-height: 1;
-}
-
-.day.disabled {
-  color: #ccc;
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-.day:hover:not(.disabled) {
-  background: #e0f2fe;
-}
-
 </style>
 </head>
 <body>
@@ -136,7 +82,6 @@ h1{font-size:clamp(42px,6vw,78px);line-height:.93;margin:0 0 16px;letter-spacing
     <div class="card">
       <h2>Inscrição para visita</h2>
 
-      <!-- Bloco de sucesso (oculto até o envio) -->
       <div id="successBlock" class="success-block">
         <div class="success-title">Sua inscrição foi realizada com sucesso!!!</div>
         <div class="success-body">
@@ -147,7 +92,6 @@ h1{font-size:clamp(42px,6vw,78px);line-height:.93;margin:0 0 16px;letter-spacing
         </div>
       </div>
 
-      <!-- Mensagem de status (erros / instrução inicial) -->
       <div id="msg" class="notice">Preencha seus dados e selecione a quantidade de visitantes.</div>
 
       <form id="form" class="form">
@@ -156,12 +100,14 @@ h1{font-size:clamp(42px,6vw,78px);line-height:.93;margin:0 0 16px;letter-spacing
           <div><label>Seu e-mail</label><input required type="email" name="email" placeholder="nome@empresa.com"></div>
         </div>
         <div class="row">
-          <div><label>Data da visita</label>
-          <div class="date-wrapper">
-            <input type="text" name="data" id="data" placeholder="Selecione a data" readonly>
-            <div id="calendar" class="calendar hidden"></div>
-          </div>    
-          </div>  
+          <div>
+            <label>Data da visita</label>
+            <div class="date-wrapper">
+              <input type="hidden" name="data" id="dataHidden">
+              <div id="dateTrigger" class="date-trigger" role="button" tabindex="0">Selecione a data</div>
+              <div id="calendar" class="calendar hidden"></div>
+            </div>
+          </div>
           <div><label>Horário</label>
             <select required name="hora" id="hora">
               <option value="">Selecione</option>
@@ -191,244 +137,208 @@ h1{font-size:clamp(42px,6vw,78px);line-height:.93;margin:0 0 16px;letter-spacing
 </div>
 
 <script>
-  var s = document.createElement('script');
-  s.src = 'https://tvglobocorp-my.sharepoint.com/personal/felipe_nicoletti_g_globo/Documents/Documentos/Automate/lab_tv_futuro/visitas.js?v=' + Date.now();
+// ─── Estado global de ocupação (preenchido pelo visitas.js quando carregar) ───
+var ocupacao = {};
 
-  s.onload = function() {
-    // mapa de ocupação — só roda após o JS carregar
-    ocupacao = {};
-    visitas.forEach(v => {
-      if (!v.data_visita) return;
+// ─── Elementos ───
+var dataHidden  = document.getElementById('dataHidden');
+var trigger     = document.getElementById('dateTrigger');
+var calendar    = document.getElementById('calendar');
+var horaSelect  = document.getElementById('hora');
+var qtdSelect   = document.getElementById('qtd');
+var guestBox    = document.getElementById('guestBox');
+var guestList   = document.getElementById('guestList');
+var msgEl       = document.getElementById('msg');
+var formEl      = document.getElementById('form');
+var submitBtn   = document.getElementById('submitBtn');
+var successBlock= document.getElementById('successBlock');
 
-      if (!ocupacao[v.data_visita]) {
-        ocupacao[v.data_visita] = [];
-      }
+var allowed = [2, 3, 4]; // ter, qua, qui
 
-      ocupacao[v.data_visita].push(v.hora_visita);
-    });
-
-    const d = document.getElementById('data');
-const h = document.getElementById('hora');
-const q = document.getElementById('qtd');
-
-const box = document.getElementById('guestBox');
-const list = document.getElementById('guestList');
-const msg = document.getElementById('msg');
-
-const form = document.getElementById('form');
-const btn = document.getElementById('submitBtn');
-const successBlock = document.getElementById('successBlock');
-
-const allowed = [2, 3, 4];
-
-// calendário
-const fake = document.getElementById('data');
-const calendar = document.getElementById('calendar');
-
-// ✅ abrir/fechar calendário — usa mousedown+touchstart para evitar
-//    que o document.click dispare junto e feche na hora (bug mobile)
-function toggleCalendar(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  calendar.classList.toggle('hidden');
-}
-
-fake.addEventListener('mousedown', toggleCalendar);
-fake.addEventListener('touchstart', toggleCalendar, { passive: false });
-
-// ✅ não fechar ao interagir dentro do calendário
-calendar.addEventListener('mousedown', (e) => e.stopPropagation());
-calendar.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
-
-// ✅ fechar ao clicar/tocar fora
-function closeIfOutside(e) {
-  const wrapper = document.querySelector('.date-wrapper');
-  if (!wrapper.contains(e.target)) {
-    calendar.classList.add('hidden');
-  }
-}
-document.addEventListener('mousedown', closeIfOutside);
-document.addEventListener('touchstart', closeIfOutside, { passive: true });
-
-// ✅ fechar ao rolar (mobile: calendário fica voando)
-window.addEventListener('scroll', () => {
-  calendar.classList.add('hidden');
-}, { passive: true });
-
-// ✅ gerar calendário
+// ─── Calendário ───────────────────────────────────────────────────────────────
 function generateCalendar() {
   calendar.innerHTML = '';
+  var today = new Date();
+  var year  = today.getFullYear();
+  var month = today.getMonth();
 
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth();
-
-  const weekDays = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
-  const header = document.createElement('div');
+  // cabeçalho dias da semana
+  var header = document.createElement('div');
   header.className = 'week-header';
-
-  weekDays.forEach(d => {
-    const el = document.createElement('div');
+  ['DOM','SEG','TER','QUA','QUI','SEX','SAB'].forEach(function(d) {
+    var el = document.createElement('div');
     el.textContent = d;
     header.appendChild(el);
   });
-
   calendar.appendChild(header);
 
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const firstDay = new Date(year, month, 1).getDay();
+  var daysInMonth = new Date(year, month + 1, 0).getDate();
+  var firstDay    = new Date(year, month, 1).getDay();
 
-  const grid = document.createElement('div');
-  grid.className = 'grid';
+  var grid = document.createElement('div');
+  grid.className = 'cal-grid';
 
-  for (let i = 0; i < firstDay; i++) {
+  // células vazias antes do dia 1
+  for (var i = 0; i < firstDay; i++) {
     grid.appendChild(document.createElement('div'));
   }
 
-  for (let i = 1; i <= daysInMonth; i++) {
-    const date = new Date(year, month, i);
-    const dayWeek = date.getDay();
-    const formatted = date.toISOString().split('T')[0];
+  for (var i = 1; i <= daysInMonth; i++) {
+    (function(day) {
+      var date      = new Date(year, month, day);
+      var dayWeek   = date.getDay();
+      var formatted = date.toISOString().split('T')[0];
 
-    const el = document.createElement('div');
-    el.className = 'day';
-    el.textContent = i;
+      var el = document.createElement('div');
+      el.className = 'day';
+      el.textContent = day;
 
-    const horariosOcupados = ocupacao[formatted] || [];
-    const diaLotado = horariosOcupados.length >= 3;
+      var horariosOcupados = ocupacao[formatted] || [];
+      var diaLotado = horariosOcupados.length >= 3;
 
-    if (
-      !allowed.includes(dayWeek) || // dia inválido
-      diaLotado // todos horários ocupados
-    ) {
-      el.classList.add('disabled');
-    } else {
-      el.addEventListener('click', () => {
-        d.value = formatted;
-
-        // ✅ filtrar horários disponíveis
-        Array.from(h.options).forEach(opt => {
-          if (!opt.value) return;
-          opt.disabled = horariosOcupados.includes(opt.value);
+      if (!allowed.includes(dayWeek) || diaLotado) {
+        el.classList.add('disabled');
+      } else {
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          selecionarData(formatted, horariosOcupados);
         });
+      }
 
-        calendar.classList.add('hidden');
-      });
-    }
-
-    grid.appendChild(el);
+      grid.appendChild(el);
+    })(i);
   }
 
   calendar.appendChild(grid);
 }
 
-generateCalendar();
-
-// ✅ mensagens
-function normMsg(t, cls = 'notice') {
-  msg.className = cls;
-  msg.innerHTML = t;
-  msg.classList.remove('hidden');
+function selecionarData(formatted, horariosOcupados) {
+  dataHidden.value = formatted;
+  trigger.textContent = formatted;
+  trigger.classList.add('filled');
+  // filtrar horários disponíveis
+  Array.from(horaSelect.options).forEach(function(opt) {
+    if (!opt.value) return;
+    opt.disabled = (horariosOcupados || []).includes(opt.value);
+  });
+  fecharCalendario();
 }
 
-// ✅ sucesso
+function abrirCalendario() {
+  generateCalendar(); // regera sempre para pegar ocupação atualizada
+  calendar.classList.remove('hidden');
+}
+
+function fecharCalendario() {
+  calendar.classList.add('hidden');
+}
+
+// ─── listener de click com await definido abaixo junto ao carregamento ──────
+
+// ─── Fechar ao clicar/tocar fora ─────────────────────────────────────────────
+document.addEventListener('click', function(e) {
+  if (!calendar.classList.contains('hidden') &&
+      !document.querySelector('.date-wrapper').contains(e.target)) {
+    fecharCalendario();
+  }
+});
+
+window.addEventListener('scroll', fecharCalendario, { passive: true });
+
+// ─── Convidados ───────────────────────────────────────────────────────────────
+qtdSelect.addEventListener('change', function() {
+  var n = parseInt(qtdSelect.value || '1', 10);
+  guestList.innerHTML = '';
+  if (n <= 1) { guestBox.classList.add('hidden'); return; }
+  guestBox.classList.remove('hidden');
+  for (var i = 1; i < n; i++) {
+    var div = document.createElement('div');
+    div.className = 'guest-row';
+    div.innerHTML =
+      '<div><label>Nome do visitante ' + i + '</label><input required name="guest_name_' + i + '"></div>' +
+      '<div><label>E-mail do visitante ' + i + '</label><input required type="email" name="guest_email_' + i + '"></div>';
+    guestList.appendChild(div);
+  }
+});
+
+// ─── Mensagens ────────────────────────────────────────────────────────────────
+function normMsg(t, cls) {
+  msgEl.className = cls || 'notice';
+  msgEl.innerHTML = t;
+  msgEl.classList.remove('hidden');
+}
+
 function showSuccess() {
-  form.classList.add('hidden');
-  msg.classList.add('hidden');
+  formEl.classList.add('hidden');
+  msgEl.classList.add('hidden');
   successBlock.classList.add('visible');
 }
 
-// ✅ convidados
-function buildGuests(n) {
-  list.innerHTML = '';
-
-  if (n <= 1) {
-    box.classList.add('hidden');
-    return;
-  }
-
-  box.classList.remove('hidden');
-
-  for (let i = 1; i < n; i++) {
-    const el = document.createElement('div');
-    el.className = 'guest-row';
-
-    el.innerHTML = `
-      <div>
-        <label>Nome do visitante ${i}</label>
-        <input required name="guest_name_${i}">
-      </div>
-      <div>
-        <label>E-mail do visitante ${i}</label>
-        <input required type="email" name="guest_email_${i}">
-      </div>
-    `;
-
-    list.appendChild(el);
-  }
-}
-
-q.addEventListener('change', () => {
-  buildGuests(parseInt(q.value || '1', 10));
-});
-
-// ✅ submit
-form.addEventListener('submit', async e => {
+// ─── Submit ───────────────────────────────────────────────────────────────────
+formEl.addEventListener('submit', async function(e) {
   e.preventDefault();
+  var count = parseInt(qtdSelect.value || '0', 10);
+  if (!count || count < 1 || count > 5) { normMsg('Selecione entre 1 e 5 visitantes.', 'error'); return; }
+  if (!dataHidden.value || !horaSelect.value) { normMsg('Preencha data e horário.', 'error'); return; }
+  var wd = new Date(dataHidden.value + 'T00:00:00').getDay();
+  if (!allowed.includes(wd)) { normMsg('Data inválida. Use terça a quinta.', 'error'); return; }
 
-  const count = parseInt(q.value || '0', 10);
+  var fd      = new FormData(formEl);
+  var payload = Object.fromEntries(fd.entries());
+  payload.total_people = count;
+  payload.timestamp    = new Date().toISOString();
 
-  if (!count || count < 1 || count > 5) {
-    normMsg('Selecione entre 1 e 5 visitantes.', 'error');
-    return;
-  }
-
-  if (!d.value || !h.value) {
-    normMsg('Preencha data e horário.', 'error');
-    return;
-  }
-
-  const wd = new Date(d.value + 'T00:00:00').getDay();
-
-  if (!allowed.includes(wd)) {
-    normMsg('Data inválida. Use terça a quinta.', 'error');
-    return;
-  }
-
-  const fd = new FormData(form);
-  const data = Object.fromEntries(fd.entries());
-
-  const payload = {
-    ...data,
-    total_people: count,
-    timestamp: new Date().toISOString()
-  };
-
-  btn.disabled = true;
-  btn.textContent = 'Enviando...';
-
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando...';
   try {
     await sendToPowerAutomate(payload);
     showSuccess();
-  } catch {
-    normMsg('Erro ao enviar.', 'error');
+  } catch(err) {
+    normMsg('Erro ao enviar. Tente novamente.', 'error');
   } finally {
-    btn.disabled = false;
-    btn.textContent = 'Enviar inscrição';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Enviar inscrição';
   }
 });
+
+// ─── Carregar visitas.js e aguardar antes de liberar o calendário ────────────
+var visitasCarregadas = new Promise(function(resolve) {
+  var s = document.createElement('script');
+  s.src = 'https://tvglobocorp-my.sharepoint.com/personal/felipe_nicoletti_g_globo/Documents/Documentos/Automate/lab_tv_futuro/visitas.js?v=' + Date.now();
+  s.onload = function() {
+    if (typeof visitas !== 'undefined') {
+      visitas.forEach(function(v) {
+        if (!v.data_visita) return;
+        if (!ocupacao[v.data_visita]) ocupacao[v.data_visita] = [];
+        ocupacao[v.data_visita].push(v.hora_visita);
+      });
+    }
+    resolve();
   };
+  s.onerror = function() {
+    console.warn('visitas.js não carregou.');
+    resolve(); // resolve mesmo assim para não travar
+  };
+  document.body.appendChild(s);
+});
 
-  document.head.appendChild(s);
-
+// ─── Só abre o calendário após os dados carregarem ────────────────────────────
+trigger.addEventListener('click', async function(e) {
+  e.stopPropagation();
+  if (!calendar.classList.contains('hidden')) { fecharCalendario(); return; }
+  trigger.textContent = 'Carregando...';
+  trigger.style.pointerEvents = 'none';
+  await visitasCarregadas;
+  trigger.textContent = dataHidden.value || 'Selecione a data';
+  trigger.style.pointerEvents = '';
+  abrirCalendario();
+});
 </script>
 
 <script>
-  //URL EXTENSÕES APP SCRIPT "IMPLANTAR"
 const PA_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzRaliDhUf2YgDdJ1gzkPMJJPcvqc_Jd3b-QCrOzPsZYYQQNj26LieDgZc5y2UpOCr2/exec';
-
 async function sendToPowerAutomate(payload) {
-  const res = await fetch(PA_ENDPOINT, {
+  await fetch(PA_ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'text/plain' },
     body: JSON.stringify(payload)
