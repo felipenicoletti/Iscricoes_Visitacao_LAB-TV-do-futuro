@@ -225,26 +225,32 @@ const allowed = [2, 3, 4];
 const fake = document.getElementById('data');
 const calendar = document.getElementById('calendar');
 
-// ✅ abrir calendário
-fake.addEventListener('click', (e) => {
+// ✅ abrir/fechar calendário — usa mousedown+touchstart para evitar
+//    que o document.click dispare junto e feche na hora (bug mobile)
+function toggleCalendar(e) {
+  e.preventDefault();
   e.stopPropagation();
   calendar.classList.toggle('hidden');
-});
+}
 
-// ✅ não fechar clicando dentro
-calendar.addEventListener('click', (e) => {
-  e.stopPropagation();
-});
+fake.addEventListener('mousedown', toggleCalendar);
+fake.addEventListener('touchstart', toggleCalendar, { passive: false });
 
-// ✅ fechar ao clicar fora
-document.addEventListener('click', (e) => {
+// ✅ não fechar ao interagir dentro do calendário
+calendar.addEventListener('mousedown', (e) => e.stopPropagation());
+calendar.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: true });
+
+// ✅ fechar ao clicar/tocar fora
+function closeIfOutside(e) {
   const wrapper = document.querySelector('.date-wrapper');
   if (!wrapper.contains(e.target)) {
     calendar.classList.add('hidden');
   }
-});
+}
+document.addEventListener('mousedown', closeIfOutside);
+document.addEventListener('touchstart', closeIfOutside, { passive: true });
 
-// ✅ fechar ao rolar (mobile: teclado sobe e calendário fica voando)
+// ✅ fechar ao rolar (mobile: calendário fica voando)
 window.addEventListener('scroll', () => {
   calendar.classList.add('hidden');
 }, { passive: true });
