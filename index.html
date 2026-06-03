@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TV do Futuro | Inscrição</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1d9bf0;--purple:#6d28d9;--pink:#e11d48;--orange:#f59e0b;--bg:#f4f7fb;--text:#111827;--muted:#6b7280;--card:#ffffff;--line:#e5e7eb}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#fff,var(--bg));color:var(--text)}
+.wrap{max-width:1120px;margin:0 auto;padding:20px 18px 28px}.headerbar{height:70px;border-radius:999px;background:linear-gradient(90deg,#1d4ed8 0%,#6d28d9 42%,#e11d48 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;letter-spacing:.02em;text-transform:uppercase;font-size:clamp(14px,2.1vw,28px);text-align:center;padding:0 18px;box-shadow:0 10px 30px rgba(17,24,39,.12)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch;margin-top:18px}.left{padding:8px 6px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#1777d0;margin:0 0 18px}.brand img{width:44px;height:44px;border-radius:12px;object-fit:cover}
+h1{font-size:clamp(42px,6vw,78px);line-height:.93;margin:0 0 16px;letter-spacing:-.04em}.grad{background:linear-gradient(90deg,#1d4ed8 0%,#7c3aed 25%,#ec4899 50%,#f59e0b 75%,#10b981 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;line-height:1.65;color:var(--muted);max-width:640px;margin-bottom:20px}.points{display:grid;gap:14px;margin:22px 0 0}.point{background:var(--card);border:1px solid rgba(17,24,39,.08);border-radius:20px;padding:16px 18px;box-shadow:0 18px 48px rgba(17,24,39,.06)}.point strong{display:block;font-size:18px;margin-bottom:3px}.point span{color:var(--muted)}
+.card{background:var(--card);border:1px solid rgba(17,24,39,.08);border-radius:26px;box-shadow:0 18px 60px rgba(17,24,39,.08);padding:24px}.card h2{margin:0 0 12px;font-size:22px}
+
+/* ── Mensagem de status ── */
+.notice{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;padding:12px 14px;border-radius:14px;font-size:14px}
+.error{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:12px 14px;border-radius:14px;font-size:14px}
+
+/* ── Bloco de sucesso igual ao print: fundo cinza, texto grande centralizado ── */
+.success-block{
+  display:none;
+  background:#effbef;
+  border-radius:18px;
+  padding:35px 22px 35px;
+  margin-bottom:20px;
+  text-align:center;
+}
+.success-block .success-title{
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.25;
+  color: #447916;
+}
+.success-block .success-body{
+  font-size: clamp(14px, 2vw, 24px);
+  line-height: 1.45;
+  color: #374151;
+  font-weight: 700;
+}
+.success-block.visible{display:block;}
+
+.form{display:grid;gap:14px;margin-top:14px}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;font-weight:700;font-size:13px;color:#374151;margin:0 0 6px}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:14px;padding:14px 14px;font:inherit;background:#fff;outline:none}input:focus,select:focus,textarea:focus{border-color:#93c5fd;box-shadow:0 0 0 4px rgba(59,130,246,.12)}
+.guest{border:1px dashed #cbd5e1;border-radius:18px;background:#fafafa;padding:16px}.guest-title{font-weight:800;margin-bottom:12px}.guest-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}.btn{appearance:none;border:none;border-radius:16px;padding:14px 18px;font-weight:900;font-size:16px;color:#fff;background:linear-gradient(90deg,#1d9bf0,#7c3aed,#f59e0b);cursor:pointer;box-shadow:0 12px 24px rgba(29,155,240,.22)}.btn:disabled{opacity:.55;cursor:not-allowed}.small{font-size:13px;color:var(--muted);margin-top:8px}
+.footer{margin-top:18px;padding-top:16px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.footer .sig{line-height:1.65;color:var(--muted);max-width:640px;}
+.badge{margin-top:16px;display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px}.badge img{width:34px;height:34px;border-radius:10px;object-fit:cover}
+.hidden{display:none!important}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.row,.guest-row,.footer{grid-template-columns:1fr}}
+
+
+.calendar {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  width: auto;
+  position: absolute;
+}
+
+.day {
+  display: inline-block;
+  width: 40px;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.day.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.day:hover:not(.disabled) {
+  background: #e0f2fe;
+}
+
+
+.week-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.day {
+  padding: 8px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.day.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.day:hover:not(.disabled) {
+  background: #e0f2fe;
+}
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="left">
+      <h1><span class="grad">Conheça a TV<br>do Futuro!</span></h1>
+      <p class="lead">Agora temos uma experiência imersiva para vivenciar a realidade da TV 3.0. Uma iniciativa dos times de OPEC e Tecnologia, a mostra apresenta, na prática, a convergência entre TV linear e digital.</p>
+      <div class="points">
+        <div class="point"><strong>Terça a quinta, entre 10h e 12h</strong><span>Visitas guiadas em grupos de até 5 pessoas</span></div>
+        <div class="point"><strong>SP, JRM – 7º andar, lado esquerdo dos elevadores</strong><span>Preencha sua visita e os convidados.</span></div>
+      </div>
+      <div class="badge"><div><div style="font-weight:800">Inscreva-se aqui*</div><div class="small">*As visitas serão realizadas em grupos de cinco pessoas, para uma melhor experiência.</div></div></div>
+    </div>
+
+    <div class="card">
+      <h2>Inscrição para visita</h2>
+
+      <!-- Bloco de sucesso (oculto até o envio) -->
+      <div id="successBlock" class="success-block">
+        <div class="success-title">Sua inscrição foi realizada com sucesso!!!</div>
+        <div class="success-body">
+          Agradecemos o seu interesse em conhecer nosso espaço. Agora, iremos validar a disponibilidade
+          da data solicitada e, em seguida, você receberá um convite de confirmação com todos os
+          detalhes da sua visita.<br><br>
+          Esperamos recebê-lo em breve!
+        </div>
+      </div>
+
+      <!-- Mensagem de status (erros / instrução inicial) -->
+      <div id="msg" class="notice">Preencha seus dados e selecione a quantidade de visitantes.</div>
+
+      <form id="form" class="form">
+        <div class="row">
+          <div><label>Seu nome</label><input required name="nome" placeholder="Nome completo"></div>
+          <div><label>Seu e-mail</label><input required type="email" name="email" placeholder="nome@empresa.com"></div>
+        </div>
+        <div class="row">
+          <div><label>Data da visita</label>
+          <div class="date-wrapper">
+            <input type="text" name="data" id="data" placeholder="Selecione a data" readonly>
+            <div id="calendar" class="calendar hidden"></div>
+          </div>    
+          </div>  
+          <div><label>Horário</label>
+            <select required name="hora" id="hora">
+              <option value="">Selecione</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div><label>Quantidade de visitantes</label><select id="qtd" name="qtd" required><option value="">Selecione</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+          <div><label>Área / time</label><input name="area" placeholder="Área / time"></div>
+        </div>
+        <div id="guestBox" class="guest hidden"><div class="guest-title">Dados dos visitantes adicionais</div><div id="guestList"></div></div>
+        <div><label>Observações</label><textarea name="obs" rows="3" placeholder="Observações"></textarea></div>
+        <button class="btn" id="submitBtn" type="submit">Enviar inscrição</button>
+      </form>
+
+      <div class="footer">
+        <div class="brand">
+          <img src="logo GloboPBI_Azul.png" alt="logo">
+          <div class="sig">OPEC & Automação de Negócios • Distribuição de Publicidade • AdSolutions e Qualidade da Distribuição</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://tvglobocorp.sharepoint.com/sites/GECGestodaExibioComercial/Documentos%20Compartilhados/GEC%20-%20Adsolutions%20e%20Qualidade/Bases/visitas.js"></script>
+<script>
+
+// mapa de ocupação
+const ocupacao = {};
+visitas.forEach(v => {
+  if (!v.data_visita) return;
+
+  if (!ocupacao[v.data_visita]) {
+    ocupacao[v.data_visita] = [];
+  }
+
+  ocupacao[v.data_visita].push(v.hora_visita);
+});
+
+const d = document.getElementById('data');
+const h = document.getElementById('hora');
+const q = document.getElementById('qtd');
+
+const box = document.getElementById('guestBox');
+const list = document.getElementById('guestList');
+const msg = document.getElementById('msg');
+
+const form = document.getElementById('form');
+const btn = document.getElementById('submitBtn');
+const successBlock = document.getElementById('successBlock');
+
+const allowed = [2, 3, 4];
+
+// calendário
+const fake = document.getElementById('data');
+const calendar = document.getElementById('calendar');
+
+// ✅ abrir calendário
+fake.addEventListener('click', (e) => {
+  e.stopPropagation();
+  calendar.classList.toggle('hidden');
+});
+
+// ✅ não fechar clicando dentro
+calendar.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+
+// ✅ fechar ao clicar fora
+document.addEventListener('click', (e) => {
+  const wrapper = document.querySelector('.date-wrapper');
+
+  if (!wrapper.contains(e.target)) {
+    calendar.classList.add('hidden');
+  }
+});
+
+// ✅ gerar calendário
+function generateCalendar() {
+  calendar.innerHTML = '';
+
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth();
+
+  const weekDays = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
+  const header = document.createElement('div');
+  header.className = 'week-header';
+
+  weekDays.forEach(d => {
+    const el = document.createElement('div');
+    el.textContent = d;
+    header.appendChild(el);
+  });
+
+  calendar.appendChild(header);
+
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const firstDay = new Date(year, month, 1).getDay();
+
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+
+  for (let i = 0; i < firstDay; i++) {
+    grid.appendChild(document.createElement('div'));
+  }
+
+  for (let i = 1; i <= daysInMonth; i++) {
+    const date = new Date(year, month, i);
+    const dayWeek = date.getDay();
+    const formatted = date.toISOString().split('T')[0];
+
+    const el = document.createElement('div');
+    el.className = 'day';
+    el.textContent = i;
+
+    const horariosOcupados = ocupacao[formatted] || [];
+    const diaLotado = horariosOcupados.length >= 3;
+
+    if (
+      !allowed.includes(dayWeek) || // dia inválido
+      diaLotado // todos horários ocupados
+    ) {
+      el.classList.add('disabled');
+    } else {
+      el.addEventListener('click', () => {
+        d.value = formatted;
+
+        // ✅ filtrar horários disponíveis
+        Array.from(h.options).forEach(opt => {
+          if (!opt.value) return;
+          opt.disabled = horariosOcupados.includes(opt.value);
+        });
+
+        calendar.classList.add('hidden');
+      });
+    }
+
+    grid.appendChild(el);
+  }
+
+  calendar.appendChild(grid);
+}
+
+generateCalendar();
+
+// ✅ mensagens
+function normMsg(t, cls = 'notice') {
+  msg.className = cls;
+  msg.innerHTML = t;
+  msg.classList.remove('hidden');
+}
+
+// ✅ sucesso
+function showSuccess() {
+  form.classList.add('hidden');
+  msg.classList.add('hidden');
+  successBlock.classList.add('visible');
+}
+
+// ✅ convidados
+function buildGuests(n) {
+  list.innerHTML = '';
+
+  if (n <= 1) {
+    box.classList.add('hidden');
+    return;
+  }
+
+  box.classList.remove('hidden');
+
+  for (let i = 1; i < n; i++) {
+    const el = document.createElement('div');
+    el.className = 'guest-row';
+
+    el.innerHTML = `
+      <div>
+        <label>Nome do visitante ${i}</label>
+        <input required name="guest_name_${i}">
+      </div>
+      <div>
+        <label>E-mail do visitante ${i}</label>
+        <input required type="email" name="guest_email_${i}">
+      </div>
+    `;
+
+    list.appendChild(el);
+  }
+}
+
+q.addEventListener('change', () => {
+  buildGuests(parseInt(q.value || '1', 10));
+});
+
+// ✅ submit
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+
+  const count = parseInt(q.value || '0', 10);
+
+  if (!count || count < 1 || count > 5) {
+    normMsg('Selecione entre 1 e 5 visitantes.', 'error');
+    return;
+  }
+
+  if (!d.value || !h.value) {
+    normMsg('Preencha data e horário.', 'error');
+    return;
+  }
+
+  const wd = new Date(d.value + 'T00:00:00').getDay();
+
+  if (!allowed.includes(wd)) {
+    normMsg('Data inválida. Use terça a quinta.', 'error');
+    return;
+  }
+
+  const fd = new FormData(form);
+  const data = Object.fromEntries(fd.entries());
+
+  const payload = {
+    ...data,
+    total_people: count,
+    timestamp: new Date().toISOString()
+  };
+
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  try {
+    await sendToPowerAutomate(payload);
+    showSuccess();
+  } catch {
+    normMsg('Erro ao enviar.', 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Enviar inscrição';
+  }
+});
+
+</script>
+
+<script>
+  //URL EXTENSÕES APP SCRIPT "IMPLANTAR"
+const PA_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzRaliDhUf2YgDdJ1gzkPMJJPcvqc_Jd3b-QCrOzPsZYYQQNj26LieDgZc5y2UpOCr2/exec';
+
+async function sendToPowerAutomate(payload) {
+  const res = await fetch(PA_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(payload)
+  });
+}
+</script>
+</body>
+</html>
