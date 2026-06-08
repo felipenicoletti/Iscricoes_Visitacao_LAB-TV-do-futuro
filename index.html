@@ -233,8 +233,6 @@ function fecharCalendario() {
   calendar.classList.add('hidden');
 }
 
-// ─── listener de click com await definido abaixo junto ao carregamento ──────
-
 // ─── Fechar ao clicar/tocar fora ─────────────────────────────────────────────
 document.addEventListener('click', function(e) {
   if (!calendar.classList.contains('hidden') &&
@@ -302,10 +300,17 @@ formEl.addEventListener('submit', async function(e) {
 });
 
 // ─── Carregar visitas.js e aguardar antes de liberar o calendário ────────────
+var scriptLoadingStatus = 'idle'; // idle, loading, success, error
+
 var visitasCarregadas = new Promise(function(resolve) {
+  scriptLoadingStatus = 'loading';
   var s = document.createElement('script');
-  s.src = 'https://tvglobocorp-my.sharepoint.com/personal/felipe_nicoletti_g_globo/Documents/Documentos/Automate/lab_tv_futuro/visitas.js?v=' + Date.now();
+  // Usando URL absoluta e garantindo que o append seja feito no head ou body de forma robusta
+  s.src = 'https://felipenicoletti.github.io/Iscricoes_Visitacao_LAB-TV-do-futuro/visitas.js?v=' + Date.now();
+  s.async = true;
+  
   s.onload = function() {
+    scriptLoadingStatus = 'success';
     if (typeof visitas !== 'undefined') {
       visitas.forEach(function(v) {
         if (!v.data_visita) return;
@@ -315,22 +320,34 @@ var visitasCarregadas = new Promise(function(resolve) {
     }
     resolve();
   };
+  
   s.onerror = function() {
-    console.warn('visitas.js não carregou.');
-    resolve(); // resolve mesmo assim para não travar
+    scriptLoadingStatus = 'error';
+    console.warn('visitas.js não carregou. Verifique permissões do SharePoint ou conexão.');
+    resolve(); // resolve mesmo assim para não travar a UI
   };
-  document.body.appendChild(s);
+  
+  (document.head || document.body).appendChild(s);
 });
 
 // ─── Só abre o calendário após os dados carregarem ────────────────────────────
 trigger.addEventListener('click', async function(e) {
   e.stopPropagation();
   if (!calendar.classList.contains('hidden')) { fecharCalendario(); return; }
+  
+  var originalText = dataHidden.value || 'Selecione a data';
   trigger.textContent = 'Carregando...';
   trigger.style.pointerEvents = 'none';
+  
   await visitasCarregadas;
-  trigger.textContent = dataHidden.value || 'Selecione a data';
+  
+  trigger.textContent = originalText;
   trigger.style.pointerEvents = '';
+  
+  if (scriptLoadingStatus === 'error') {
+     normMsg('Não foi possível carregar as datas ocupadas. Algumas datas podem estar indisponíveis.', 'error');
+  }
+  
   abrirCalendario();
 });
 </script>
