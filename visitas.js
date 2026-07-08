@@ -38,5 +38,9 @@ const visitas = [
   {
     "data_visita": "2026-07-21",
     "hora_visita": "12:00"
+  },
+  {
+    "data_visita": "2026-07-21",
+    "hora_visita": "12:00"
   }
 ];
