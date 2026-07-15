@@ -8,27 +8,27 @@ const visitas = [
     "hora_visita": "12:00"
   },
   {
-    "data_visita": "2026-07-14",
+    "data_visita": "2026-08-12",
     "hora_visita": "10:00"
   },
   {
-    "data_visita": "2026-07-14",
+    "data_visita": "2026-08-12",
     "hora_visita": "11:00"
   },
   {
-    "data_visita": "2026-07-14",
+    "data_visita": "2026-08-12",
     "hora_visita": "12:00"
   },
   {
-    "data_visita": "2026-07-16",
+    "data_visita": "2026-08-13",
     "hora_visita": "10:00"
   },
   {
-    "data_visita": "2026-07-16",
+    "data_visita": "2026-08-13",
     "hora_visita": "11:00"
   },
   {
-    "data_visita": "2026-07-16",
+    "data_visita": "2026-08-13",
     "hora_visita": "12:00"
   },
   {
@@ -273,6 +273,42 @@ const visitas = [
   },
   {
     "data_visita": "2026-08-18",
+    "hora_visita": "10:00"
+  },
+  {
+    "data_visita": "2026-07-09",
+    "hora_visita": "12:00"
+  },
+  {
+    "data_visita": "2026-08-06",
+    "hora_visita": "10:00"
+  },
+  {
+    "data_visita": "2026-07-09",
+    "hora_visita": "11:00"
+  },
+  {
+    "data_visita": "2026-08-13",
+    "hora_visita": "10:00"
+  },
+  {
+    "data_visita": "2026-08-26",
+    "hora_visita": "12:00"
+  },
+  {
+    "data_visita": "2026-07-09",
+    "hora_visita": "12:00"
+  },
+  {
+    "data_visita": "2026-08-13",
+    "hora_visita": "11:00"
+  },
+  {
+    "data_visita": "2026-08-06",
+    "hora_visita": "10:00"
+  },
+  {
+    "data_visita": "2026-08-06",
     "hora_visita": "10:00"
   }
 ];
