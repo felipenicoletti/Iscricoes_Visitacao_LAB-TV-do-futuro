@@ -177,77 +177,62 @@ const visitas = [
   {
     "data_visita": "2026-08-11",
     "hora_visita": "10:00",
-    "qtd_visitas": 5
-  },
-  {
-    "data_visita": "2026-08-11",
-    "hora_visita": "11:00",
-    "qtd_visitas": 4
-  },
-  {
-    "data_visita": "2026-08-11",
-    "hora_visita": "12:00",
-    "qtd_visitas": 3
-  },
-  {
-    "data_visita": "2026-08-12",
-    "hora_visita": "10:00",
-    "qtd_visitas": 4
-  },
-  {
-    "data_visita": "2026-08-12",
-    "hora_visita": "11:00",
-    "qtd_visitas": 4
-  },
-  {
-    "data_visita": "2026-08-12",
-    "hora_visita": "12:00",
-    "qtd_visitas": 5
-  },
-  {
-    "data_visita": "2026-08-13",
-    "hora_visita": "10:00",
-    "qtd_visitas": 5
-  },
-  {
-    "data_visita": "2026-08-13",
-    "hora_visita": "11:00",
-    "qtd_visitas": 4
-  },
-  {
-    "data_visita": "2026-08-13",
-    "hora_visita": "12:00",
-    "qtd_visitas": 4
-  },
-  {
-    "data_visita": "2026-08-18",
-    "hora_visita": "10:00",
-    "qtd_visitas": 4
-  },
-  {
-    "data_visita": "2026-08-19",
-    "hora_visita": "10:00",
-    "qtd_visitas": 2
-  },
-  {
-    "data_visita": "2026-08-19",
-    "hora_visita": "11:00",
-    "qtd_visitas": 2
-  },
-  {
-    "data_visita": "2026-08-19",
-    "hora_visita": "12:00",
-    "qtd_visitas": 4
-  },
-  {
-    "data_visita": "2026-08-20",
-    "hora_visita": "12:00",
     "qtd_visitas": 1
   },
   {
-    "data_visita": "2026-08-27",
-    "hora_visita": "10:00",
+    "data_visita": "2026-08-11",
+    "hora_visita": "11:00",
+    "qtd_visitas": 2
+  },
+  {
+    "data_visita": "2026-08-11",
+    "hora_visita": "12:00",
     "qtd_visitas": 3
+  },
+  {
+    "data_visita": "2026-08-12",
+    "hora_visita": "10:00",
+    "qtd_visitas": 4
+  },
+  {
+    "data_visita": "2026-08-12",
+    "hora_visita": "11:00",
+    "qtd_visitas": 4
+  },
+  {
+    "data_visita": "2026-08-12",
+    "hora_visita": "12:00",
+    "qtd_visitas": 5
+  },
+  {
+    "data_visita": "2026-08-13",
+    "hora_visita": "10:00",
+    "qtd_visitas": 4
+  },
+  {
+    "data_visita": "2026-08-13",
+    "hora_visita": "11:00",
+    "qtd_visitas": 4
+  },
+  {
+    "data_visita": "2026-08-13",
+    "hora_visita": "12:00",
+    "qtd_visitas": 4
+  },
+  {
+    "data_visita": "2026-08-19",
+    "hora_visita": "10:00",
+    "qtd_visitas": 2
+  },
+  {
+    "data_visita": "2026-08-19",
+    "hora_visita": "11:00",
+    "qtd_visitas": 2
+  },
+  {
+    "data_visita": "2026-08-19",
+    "hora_visita": "12:00",
+    "qtd_visitas": 4
   },
   {
     "data_visita": "2026-09-01",
