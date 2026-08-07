@@ -172,6 +172,7 @@ input:focus,select:focus,textarea:focus{border-color:#93c5fd;box-shadow:0 0 0 4p
 <script>
 // ─── Estado global de ocupação ───
 var ocupacao = {};
+var LIMITE_POR_HORARIO = 5;
 
 // ─── Elementos ───
 var dataHidden  = document.getElementById('dataHidden');
@@ -527,7 +528,7 @@ async function sendToPowerAutomate(payload) {
     body: JSON.stringify(payload)
   });
 }
-  console.log('atualizado 260807163510b')
+  console.log('atualizado 260807163510a')
 </script>
 </body>
 </html>
