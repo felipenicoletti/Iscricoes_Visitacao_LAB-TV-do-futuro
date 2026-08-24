@@ -267,7 +267,12 @@ const visitas = [
   {
     "data_visita": "2026-08-26",
     "hora_visita": "10:00",
-    "qtd_visitas": 4
+    "qtd_visitas": 6
+  },
+  {
+    "data_visita": "2026-08-26",
+    "hora_visita": "11:00",
+    "qtd_visitas": 1
   },
   {
     "data_visita": "2026-08-26",
@@ -277,12 +282,12 @@ const visitas = [
   {
     "data_visita": "2026-08-27",
     "hora_visita": "11:00",
-    "qtd_visitas": 1
+    "qtd_visitas": 5
   },
   {
     "data_visita": "2026-08-27",
     "hora_visita": "12:00",
-    "qtd_visitas": 1
+    "qtd_visitas": 10
   },
   {
     "data_visita": "2026-09-01",
