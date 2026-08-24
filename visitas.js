@@ -207,7 +207,7 @@ const visitas = [
   {
     "data_visita": "2026-08-13",
     "hora_visita": "10:00",
-    "qtd_visitas": 5
+    "qtd_visitas": 4
   },
   {
     "data_visita": "2026-08-13",
@@ -218,6 +218,11 @@ const visitas = [
     "data_visita": "2026-08-13",
     "hora_visita": "12:00",
     "qtd_visitas": 4
+  },
+  {
+    "data_visita": "2026-08-18",
+    "hora_visita": "10:00",
+    "qtd_visitas": 1
   },
   {
     "data_visita": "2026-08-18",
@@ -245,19 +250,14 @@ const visitas = [
     "qtd_visitas": 4
   },
   {
-    "data_visita": "2026-08-20",
-    "hora_visita": "11:00",
+    "data_visita": "2026-08-26",
+    "hora_visita": "12:00",
     "qtd_visitas": 1
   },
   {
     "data_visita": "2026-09-01",
     "hora_visita": "11:00",
     "qtd_visitas": 6
-  },
-  {
-    "data_visita": "2026-09-30",
-    "hora_visita": "11:00",
-    "qtd_visitas": 1
   },
   {
     "data_visita": "data vista",
