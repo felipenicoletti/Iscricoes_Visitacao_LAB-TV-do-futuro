@@ -255,6 +255,11 @@ const visitas = [
     "qtd_visitas": 1
   },
   {
+    "data_visita": "2026-08-25",
+    "hora_visita": "12:00",
+    "qtd_visitas": 1
+  },
+  {
     "data_visita": "2026-08-26",
     "hora_visita": "12:00",
     "qtd_visitas": 1
