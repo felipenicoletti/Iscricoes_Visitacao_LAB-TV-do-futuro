@@ -272,7 +272,7 @@ const visitas = [
   {
     "data_visita": "2026-08-26",
     "hora_visita": "11:00",
-    "qtd_visitas": 3
+    "qtd_visitas": 8
   },
   {
     "data_visita": "2026-08-26",
